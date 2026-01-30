@@ -2,7 +2,7 @@ DESCRIPTION = "Axelera configuration files for udev."
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
-FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 SRC_URI = " \
 	file://72-axelera.rules \
 "
@@ -20,4 +20,4 @@ do_install() {
 	install -m 0644 ${WORKDIR}/72-axelera.rules ${D}${nonarch_base_libdir}/udev/rules.d/72-axelera.rules
 }
 
-FILES:${PN} = "${nonarch_base_libdir}/udev/rules.d/${RULE_FILENAME}"
+FILES_${PN} = "${nonarch_base_libdir}/udev/rules.d/${RULE_FILENAME}"

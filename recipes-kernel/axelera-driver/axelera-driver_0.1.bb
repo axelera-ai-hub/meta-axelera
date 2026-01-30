@@ -12,7 +12,9 @@ inherit module
 
 PV = "1.5.3"
 
-SRC_URI = "git://git@github.com/axelera-ai-hub/axelera-driver.git;protocol=ssh;branch=release/v1.5"
+SRC_URI = "git://git@github.com/axelera-ai-hub/axelera-driver.git;protocol=ssh;branch=release/v1.5 \
+           file://0001-Fix-kernel-5.4-compatibility.patch \
+"
 SRCREV = "1216e9b049fdd92fd0124c2106d3b2ae10fe163d"
 
 S = "${WORKDIR}/git"
