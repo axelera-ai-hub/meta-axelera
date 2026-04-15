@@ -10,10 +10,10 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=4641e94ec96f98fabc56ff9cc48be14b"
 
 inherit module
 
-PV = "1.5.3"
+PV = "1.6.0"
 
-SRC_URI = "git://git@github.com/axelera-ai-hub/axelera-driver.git;protocol=ssh;branch=release/v1.5"
-SRCREV = "1216e9b049fdd92fd0124c2106d3b2ae10fe163d"
+SRC_URI = "git://git@github.com/axelera-ai-hub/axelera-driver.git;protocol=ssh;branch=release/v1.6"
+SRCREV = "a98a609514b16cf2e0ff749d5676bbaf5bde93aa"
 
 S = "${WORKDIR}/git"
 
