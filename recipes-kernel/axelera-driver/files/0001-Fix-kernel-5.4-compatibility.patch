@@ -10,26 +10,25 @@ Upstream-Status: Pending
 
 Signed-off-by: Axelera AI <support@axelera.ai>
 ---
- metis-core.c | 15 +++++++++++++--
- 1 file changed, 13 insertions(+), 2 deletions(-)
+ axl-aipu-core.c | 24 +++++++++++++++++++-----
+ 1 file changed, 19 insertions(+), 5 deletions(-)
 
-diff --git a/metis-core.c b/metis-core.c
-index 1234567..abcdefg 100644
---- a/metis-core.c
-+++ b/metis-core.c
-@@ -743,6 +743,11 @@ static void axl_mask_all_aer_errors(struct pci_dev *pdev)
-
- 	dev_info(&pdev->dev, "All AER errors masked\n");
+diff --git a/axl-aipu-core.c b/axl-aipu-core.c
+--- a/axl-aipu-core.c
++++ b/axl-aipu-core.c
+@@ -615,6 +615,11 @@
+ 	return upstream_port->bus->number;
  }
-+
+
 +/* PCI_STD_NUM_BARS not available in kernel < 5.7 */
 +#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 7, 0)
 +#define PCI_STD_NUM_BARS 6
 +#endif
++
  static void axl_aipu_get_memwindow_info(struct axl_pcie_aipu_dev *axldev,
  					struct pci_dev *pdev)
  {
-@@ -801,7 +806,13 @@ static int axlaipu_pci_init(struct pci_dev *pdev,
+@@ -719,7 +724,12 @@
  	u16 reg16, lnkctl2, lnksta;
  	u32 reg32, lnkcap;
 
@@ -39,11 +38,10 @@ index 1234567..abcdefg 100644
 +	/* Use older API for kernel < 5.7 */
 +	pci_cleanup_aer_uncorrect_error_status(pdev);
 +#endif
-+
  	err = pcim_enable_device(pdev);
  	if (err) {
  		dev_err(&pdev->dev, "pci_enable_device failed: %d\n", err);
-@@ -1312,7 +1323,11 @@ static int axlaipu_pci_resume_slot(struct pci_dev *pdev)
+@@ -1395,7 +1405,11 @@
  		result = PCI_ERS_RESULT_RECOVERED;
  	}
 
@@ -55,6 +53,5 @@ index 1234567..abcdefg 100644
 
  	return result;
  }
-
 --
 2.34.1
