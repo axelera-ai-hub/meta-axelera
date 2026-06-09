@@ -10,12 +10,12 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=4641e94ec96f98fabc56ff9cc48be14b"
 
 inherit module
 
-PV = "1.6.0"
+PV = "1.6.1"
 
 SRC_URI = "git://git@github.com/axelera-ai-hub/axelera-driver.git;protocol=ssh;branch=release/v1.6
            file://0001-Fix-kernel-5.4-compatibility.patch \
 "
-SRCREV = "a98a609514b16cf2e0ff749d5676bbaf5bde93aa"
+SRCREV = "9b96591db5974c152ce2bbfa2a0c1300e169c3ee"
 
 S = "${WORKDIR}/git"
 
