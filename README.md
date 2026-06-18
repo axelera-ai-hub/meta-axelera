@@ -141,7 +141,7 @@ Edit `conf/local.conf` to include Axelera packages:
 
 ```bash
 # Add Axelera packages to your image
-IMAGE_INSTALL:append = " axelera-driver axelera-udev-rules"
+IMAGE_INSTALL:append = " axelera-driver"
 ```
 
 ### 4. Build Your Image
@@ -159,17 +159,11 @@ bitbake core-image-minimal
 This layer provides the following recipes:
 
 ### axelera-driver
-- **Description**: PCIe kernel driver for Axelera AI accelerators
+- **Description**: PCIe kernel driver for Axelera AI accelerators, including udev rules for device detection and configuration
 - **Type**: Kernel module
 - **Location**: `recipes-kernel/axelera-driver/`
 - **Package name**: `axelera-driver`
-
-### axelera-udev-rules
-- **Description**: udev rules for Axelera device detection and configuration
-- **Type**: Configuration
-- **Location**: `recipes-core/udev/`
-- **Package name**: `axelera-udev-rules`
-- **Installs**: `/lib/udev/rules.d/72-axelera.rules`
+- **Installs**: kernel module + `/lib/udev/rules.d/72-axelera.rules`
 
 ### Package Format
 
@@ -177,7 +171,6 @@ This layer configures builds to use `.deb` packages by default for easier distri
 
 ```
 build/tmp/deploy/deb/core2-64/axelera-driver_*.deb
-build/tmp/deploy/deb/all/axelera-udev-rules_*.deb
 ```
 
 To use a different package format (RPM or IPK), override in your `conf/local.conf`:
@@ -215,7 +208,6 @@ To include Axelera support in your custom image recipe:
 # In your custom-image.bb
 IMAGE_INSTALL += " \
     axelera-driver \
-    axelera-udev-rules \
 "
 ```
 
