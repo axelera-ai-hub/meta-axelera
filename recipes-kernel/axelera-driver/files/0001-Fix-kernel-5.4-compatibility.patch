@@ -41,7 +41,7 @@ diff --git a/axl-aipu-core.c b/axl-aipu-core.c
  	err = pcim_enable_device(pdev);
  	if (err) {
  		dev_err(&pdev->dev, "pci_enable_device failed: %d\n", err);
-@@ -1395,7 +1405,11 @@
+@@ -1459,8 +1469,12 @@
  		result = PCI_ERS_RESULT_RECOVERED;
  	}
 
@@ -50,6 +50,7 @@ diff --git a/axl-aipu-core.c b/axl-aipu-core.c
 +#else
 +	pci_cleanup_aer_uncorrect_error_status(pdev);
 +#endif
+ 	pci_set_master(pdev);
 
  	return result;
  }
