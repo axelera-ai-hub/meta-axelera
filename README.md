@@ -47,7 +47,7 @@ For the complete VoyagerSDK documentation, visit the [VoyagerSDK repository](htt
 
 This layer depends on:
 - **URI**: [git://git.yoctoproject.org/poky](https://git.yoctoproject.org/poky)
-- **Branch**: scarthgap
+- **Branch**: wrynose
 - **Layers**: meta, meta-poky, meta-yocto-bsp
 
 ### Kernel Requirements
@@ -93,10 +93,11 @@ ls -l /dev/dma_heap/
 
 ## Supported Yocto Versions
 
-This branch supports **Yocto 5.0 (Scarthgap)** only.
+This branch supports **Yocto 6.0 (Wrynose)** only.
 
 For other Yocto versions, check out the corresponding branch:
-- `yocto/scarthgap` - Yocto 5.0 (Scarthgap) ← You are here
+- `yocto/wrynose` - Yocto 6.0 (Wrynose) ← You are here
+- `yocto/scarthgap` - Yocto 5.0 (Scarthgap)
 - `yocto/kirkstone` - Yocto 4.0 (Kirkstone)
 - `yocto/dunfell` - Yocto 3.1 (Dunfell)
 
@@ -105,7 +106,7 @@ For other Yocto versions, check out the corresponding branch:
 ### Prerequisites
 
 - A working Yocto build environment (see [Yocto Project Quick Build](https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html))
-- Scarthgap-based Yocto distribution
+- Wrynose-based Yocto distribution
 
 ### 1. Clone the Layer
 
@@ -115,8 +116,8 @@ Add this layer to your Yocto project:
 # Navigate to your Yocto sources directory
 cd <yocto-project>/sources
 
-# Clone meta-axelera (scarthgap branch)
-git clone -b yocto/scarthgap https://github.com/axelera-ai/meta-axelera.git
+# Clone meta-axelera (wrynose branch)
+git clone -b yocto/wrynose https://github.com/axelera-ai/meta-axelera.git
 ```
 
 ### 2. Add the Layer to Your Build

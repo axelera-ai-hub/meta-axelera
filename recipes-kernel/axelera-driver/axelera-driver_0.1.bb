@@ -15,8 +15,6 @@ PV = "1.8.0"
 SRC_URI = "git://git@github.com/axelera-ai-hub/axelera-driver.git;protocol=ssh;branch=release/v1.8"
 SRCREV = "82e9f04cba0413f6ddd9b630b87921c539a54064"
 
-S = "${WORKDIR}/git"
-
 EXTRA_OEMAKE = "KDIR=${STAGING_KERNEL_BUILDDIR}"
 
 do_install:append() {
